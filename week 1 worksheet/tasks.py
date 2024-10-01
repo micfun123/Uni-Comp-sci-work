@@ -8,7 +8,7 @@ def say_hello_2():
 
 
 def dollars_to_pounds(dollars :float):
-    print(f"You have {dollars * 1.35} pounds")
+    print(f"You have {dollars / 1.35} pounds")
 
 
 
