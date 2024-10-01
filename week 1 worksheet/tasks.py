@@ -56,7 +56,7 @@ def count_from_to():
 
 def weights_table():
     start = 0
-    while start <100:
+    for i in range(0,100,10):
         start += 10
         print(f"{start} | {start * 35.274}")
         

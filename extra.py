@@ -1,4 +1,8 @@
 def reverse(x: int) -> int:
+        if x == 0:
+            return 0
+        if abs(x) >= 2**21:
+             return 0
         num = str(x)
         isneg = False
         num = list(num)
@@ -7,11 +11,13 @@ def reverse(x: int) -> int:
             isneg = True
         print(isneg)
         num = num[::-1]
-
+        num = ''.join(num)
+        num = num.lstrip("0")
         if isneg == True:
-            num.insert(0,"-")
+           num = list(num)
+           num.insert(0,"-")
         num = ''.join(num)
         num = eval(num)
         print(num)
         
-reverse(-5910)
+reverse(-59010)
