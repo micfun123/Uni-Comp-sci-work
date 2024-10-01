@@ -24,9 +24,9 @@ def change_counter():
     one_pence = int(input("How many one pence do you have: "))
     two_pence = int(input("How many two pence do you have: "))
     five_pence = int(input("How many five pence do you have: "))
-    print(f"You have a toatl of {one_pence + two_pence + five_pence} pence")
+    print(f"You have a toatl of {one_pence + two_pence *2 + five_pence * 5} pence")
 
-
+change_counter()
 
 def ten_hellos():
     #print("Hello World \n" * 10)
@@ -44,7 +44,7 @@ def zoom_zoom():
 
 def count_to():
     amount = int(input("How many do you want to count to"))
-    for i in range(0,amount+1):
+    for i in range(1,amount+1):
         print(i)
 
 def count_from_to():
@@ -55,7 +55,7 @@ def count_from_to():
 
 
 def weights_table():
-    start = 10
+    start = 0
     while start <100:
         start += 10
         print(f"{start} | {start * 35.274}")
