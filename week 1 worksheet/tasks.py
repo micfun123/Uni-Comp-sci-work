@@ -43,9 +43,11 @@ def zoom_zoom():
 
 
 def count_to():
-    amount = int(input("How many do you want to count to"))
-    for i in range(1,amount+1):
-        print(i)
+    amount = int(input("How many do you want to count to: "))
+    for i in range(amount):
+        print(i+1)
+
+count_to()
 
 def count_from_to():
     startnum = int(input("Where do you want to start counting from"))
