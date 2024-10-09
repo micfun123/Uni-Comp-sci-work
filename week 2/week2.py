@@ -13,8 +13,9 @@ def circumference_of_circle():
 def cost_of_pizza():
     dim = int(input("Enter the diameter: "))
     area = (dim/2) ** 2 * math.pi
-    cost = area*3.5
-    print(f"The cost is {round(cost,2)} pounds")
+    cost_in_pence = area*3.5
+    cost_pounds = cost_in_pence / 100
+    print(f"The cost is {round(cost_pounds,2)} pounds")
 
 def slope_of_line():
     x_1 = int(input("Enter x_1: "))
