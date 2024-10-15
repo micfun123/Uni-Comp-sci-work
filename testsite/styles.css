@@ -4,27 +4,6 @@
   box-sizing: border-box;
 }
 
-#bobbericon {
-  font-size: 6rem; /* Increase the size of the bobber */
-  animation: bob 2s infinite; /* Apply animation */
-  display: inline-block; /* Make sure it animates correctly */
-  color: #000; /* You can change the color if needed */
-}
-
-/* Keyframes for the up-and-down animation */
-@keyframes bob {
-  0% {
-    transform: translateY(0); /* Starting position */
-  }
-  50% {
-    transform: translateY(-15px); /* Moves up */
-  }
-  100% {
-    transform: translateY(0); /* Moves back to original position */
-  }
-}
-
-
 html, body {
   height: 100%;
   overflow: hidden;
@@ -32,42 +11,34 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  scroll-behavior: smooth;  /* Smooth scrolling */
 }
 
 .container {
-  width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
+  overflow-y: scroll;  /* Allows vertical scrolling */
+  scroll-snap-type: y mandatory;  /* Enable snap scrolling on the vertical axis */
 }
 
 .section {
-  position: absolute;
-  width: 100vw;
   height: 100vh;
-  top: 100%; /* Start with each section out of view */
-  opacity: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: #f4f4f4;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  scroll-snap-align: start;
+  padding: 20px;
+  text-align: center;
 }
 
-.section.active {
-  top: 0; /* The active section moves into view */
-  opacity: 1;
-  transform: translateY(0);
+.section p {
+  margin-bottom: 15px;
 }
 
-.section:not(.active) {
-  transform: translateY(100%);
-}
+
 
 #section-1 {
-  background-color: #a541b0;
+  background-color: #ff9999;
 }
 
 #section-2 {
@@ -77,12 +48,35 @@ body {
 #section-3 {
   background-color: #99ff99;
 }
+
 #section-4 {
-  background-color: #038f08;
+  background-color: #ffcc99;
 }
+
 #section-5 {
-  background-color: #e1e55a;
+  background-color: #cc99ff;
 }
+
 #section-6 {
-  background-color: #eabc51;
+  background-color: #ffff99;
 }
+
+#bobbericon {
+  font-size: 80px;  /* Make the arrow bigger */
+  animation: bob 2s infinite;  /* Bobbing animation */
+  display: inline-block;
+}
+
+/* Bobbing animation */
+@keyframes bob {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+  
