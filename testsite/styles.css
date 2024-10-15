@@ -35,11 +35,15 @@ body {
   margin-bottom: 15px;
 }
 
-
-
 #section-1 {
-  background-color: #ff9999;
+  background-color: #ae1e64;
+  color: rgb(215, 241, 250);
 }
+#section-1 a{
+  color: rgb(153, 195, 231);
+}
+
+
 
 #section-2 {
   background-color: #99ccff;

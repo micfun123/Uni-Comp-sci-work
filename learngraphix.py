@@ -24,3 +24,6 @@ eye_left = Point(90,60)
 eye_right = Point(110,60)
 eye_left.draw(win)
 eye_right.draw(win)
+
+mouth = Circle(Point(100,70),5)
+mouth.draw(win)
