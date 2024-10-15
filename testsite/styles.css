@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+#bobbericon {
+  font-size: 6rem; /* Increase the size of the bobber */
+  animation: bob 2s infinite; /* Apply animation */
+  display: inline-block; /* Make sure it animates correctly */
+  color: #000; /* You can change the color if needed */
+}
+
+/* Keyframes for the up-and-down animation */
+@keyframes bob {
+  0% {
+    transform: translateY(0); /* Starting position */
+  }
+  50% {
+    transform: translateY(-15px); /* Moves up */
+  }
+  100% {
+    transform: translateY(0); /* Moves back to original position */
+  }
+}
+
+
 html, body {
   height: 100%;
   overflow: hidden;
