@@ -1,0 +1,13 @@
+#register_intrest{
+    border: 4mm ridge rgba(158, 30, 164, 0.6);
+    padding: 0.5%;
+}
+
+aside {
+    width: 40%;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    float: right;
+    font-style: italic;
+    color: #000000;
+  }

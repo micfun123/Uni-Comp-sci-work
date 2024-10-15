@@ -6,6 +6,7 @@
     <title>University of Portsmouth Modules</title>
     <meta name="author" content="Michael Parker">
     <meta name="description" content="The University of Portsmouth Module list with a small description.">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -17,45 +18,88 @@
     <hr>
     
     <main>
-        <section>
+        <article class="module">
+            <aside>
+                <p>This module is taught by</p>
+            </aside>
             <h2>Architectures and Operating Systems</h2>
+            
             <p>In this module, you'll grasp computing's foundations – the logical and theoretical systems that make up a computer.</p>
-        </section>
+            
+        </article>
 
         <hr>
 
         
-        <section>
+        <article class="module">
+            <aside>
+                <p>This module is taught by</p>
+            </aside>
             <h2>Core Computing Concepts</h2>
             <p>Get fluent in the four foundational pillars of computer science.</p>
-        </section>
+        </article>
 
         <hr>
 
         
-        <section>
+        <article class="module">
+            <aside>
+                <p>This module is taught by</p>
+            </aside>
             <h2>Database System Development</h2>
             <p>Create relational databases that deliver actionable information for business environments in this practical module.</p>
-        </section>
+        </article>
 
         <hr>
 
         
-        <section>
+        <article class="module">
+            <aside>
+                <p>This module is taught by</p>
+            </aside>
             <h2>Networks</h2>
             <p>Explore both current and legacy networking technologies in depth.</p>
-        </section>
+        </article>
 
         <hr>
 
         
-        <section>
+        <article class="module">
+            <aside>
+                <p>This module is taught by</p>
+            </aside>
             <h2>Programming</h2>
             <p>Increase your knowledge of programming, whatever your starting level, in this foundational module.</p>
-        </section>
+        </article>
+
+        <hr>
+
     </main>
 
-    
+    <section id="register_intrest">
+    <h3> Register intrest</h3>
+    <form action="">
+        <label for="name">Enter your name</label>
+        <input type="text" name="name" id="name" required />
+        <br>
+        <label for="email">Enter your email</label>
+        <input type="email" name="email" id="email" required />
+        <br>
+        <label for="Course Intrest">Select your intrest</label>
+        <select name="courses">
+            <option value="">--Please choose an option--</option>
+            <option value="Architectures and Operating Systems">Architectures and Operating Systems</option>
+            <option value="Core Computing Concepts">Core Computing Concepts</option>
+            <option value="Database System Development">Database System Development</option>
+            <option value="Networks">Networks</option>
+            <option value="Programming">Programming</option>
+          </select>
+          <hr>
+        <button type="submit">Submit</button>
+          
+    </form>
+    </section>
+
     <footer>
         <p>University of Portsmouth Computer Science Program</p>
     </footer>
