@@ -27,3 +27,5 @@ eye_right.draw(win)
 
 mouth = Circle(Point(100,70),5 )
 mouth.draw(win)
+
+input()
