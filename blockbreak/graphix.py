@@ -420,20 +420,6 @@ class GraphixObject(ABC):
             if canvas._autoflush:
                 _root.update()
 
-    def moveto(self, dx: int, dy: int) -> None:
-        """Moves object to a specific x and y location"""
-        if not isinstance(dx, int) or not isinstance(dy, int):
-            raise GraphixError("the location must be integers")
-        self._moveto(dx,dy)
-        canvas = self._canvas 
-        if canvas and not canvas.is_closed():
-            x = dx
-            y = dy
-            self._canvas.move(self._id, x, y)
-            if canvas._autoflush:
-                _root.update()
-        
-
     def _reconfig(self, option, setting):
         # Internal method for changing configuration of the object
         # Raises an error if the option does not exist in the config
@@ -455,10 +441,6 @@ class GraphixObject(ABC):
     @abstractmethod
     def _move(self, dx, dy):
         """Updates internal state of object to move it dx,dy units"""
-
-    @abstractmethod
-    def _moveto(self, dx, dy):
-        """Updates internal state of object to move to x, y location"""
 
 
 class Point(GraphixObject):
@@ -515,11 +497,6 @@ class Point(GraphixObject):
         self._x = self._x + dx
         self._y = self._y + dy
 
-    def _moveto(self, dx, dy):
-        self._x = dx
-        self._y = dy
-
-
 
 class _BBox(GraphixObject):
     # Internal base class for objects represented by bounding box
@@ -538,10 +515,6 @@ class _BBox(GraphixObject):
     def _move(self, dx, dy):
         self._p1.move(dx, dy)
         self._p2.move(dx, dy)
-
-    def _moveto(self, dx, dy):
-        self._p1.moveto(dx, dy)
-        self._p2.moveto(dx, dy)
 
     def get_p1(self) -> Point:
         """Returns a clone of the p1 point."""
@@ -737,13 +710,6 @@ class Polygon(GraphixObject):
         for p in self._points:
             p.move(dx,dy)
 
-    def _moveto(self, dx, dy):
-        if not isinstance(dx, int) or not isinstance(dy, int):
-            raise GraphixError("Move distances must both be integers")
-        for p in self._points:
-            p.moveto(dx,dy)
-
-
     def _draw(self, canvas, options):
         args = [canvas]
         for p in self._points:
@@ -868,9 +834,6 @@ class Text(GraphixObject):
 
     def _move(self, dx, dy):
         self._anchor.move(dx,dy)
-
-    def _moveto(self, dx, dy):
-        self._anchor._moveto(dx, dy)
 
 
 class Entry(GraphixObject):
@@ -1017,10 +980,6 @@ class Entry(GraphixObject):
     def _move(self, dx, dy):
         self._anchor.move(dx,dy)
 
-    def _moveto(self, dx, dy):
-        self._anchor.x = dx
-        self._anchor.y = dy
-    
     def _set_font_component(self, which, value):
         font = list(self._font)
         font[which] = value
