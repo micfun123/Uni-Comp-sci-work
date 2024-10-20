@@ -83,6 +83,11 @@ body {
   width: 35%;
 }
 
+.staff_table {
+  width: 100%;
+  border : 1px solid black;
+}
+
 .phone-number {
   position: fixed;
   bottom: 1rem;
