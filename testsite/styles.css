@@ -65,6 +65,47 @@ body {
   background-color: #ffff99;
 }
 
+
+#section-6 {
+  background-color: #94ffb0;
+}
+
+#section-7 {
+  background-color: #a494ff;
+}
+
+
+#section-8 {
+  background-color: #e4ad4e;
+}
+
+.logo {
+  width: 35%;
+}
+
+.phone-number {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: #f1f1f1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+.phone-number a {
+  text-decoration: none;
+  color: #333;
+}
+
+.phone-number a:hover {
+  color: #007bff;
+}
+
+
+
+
 #bobbericon {
   font-size: 80px;  /* Make the arrow bigger */
   animation: bob 2s infinite;  /* Bobbing animation */
