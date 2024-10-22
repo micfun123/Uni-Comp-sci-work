@@ -135,5 +135,3 @@ def ten_coloured_rectangles():
 
 
 
-
-    
